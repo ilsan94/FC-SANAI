@@ -4,10 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>FC사나이 유니폼 월드컵</title>
     <style>
+        /* 기본 스타일 및 세련된 미드나잇 그라데이션 배경 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #0f172a;
-            color: #ffffff;
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
             margin: 0;
             padding: 0;
             display: flex;
@@ -15,115 +16,166 @@
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             box-sizing: border-box;
         }
+
+        /* 타이틀 디자인: 스포티한 입체 그라데이션 */
         h1 {
             font-size: 1.8rem;
-            margin: 20px 0 5px 0;
-            color: #38bdf8;
-            text-align: center;
-            font-weight: 800;
+            margin: 30px 0 8px 0;
+            font-weight: 900;
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(56, 189, 248, 0.15);
+            letter-spacing: -0.03em;
         }
+
+        /* 라운드 패널: 반투명 유리(Blur) 효과 */
         #round-title {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: bold;
-            margin-bottom: 15px;
-            background: #1e293b;
-            padding: 8px 20px;
-            border-radius: 20px;
-            border: 1px solid #38bdf8;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 6px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #38bdf8;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            letter-spacing: 0.05em;
         }
+
+        /* 메인 정렬 컨테이너 */
         .container {
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 450px;
-            gap: 12px;
-            padding: 0 15px;
+            max-width: 420px;
+            gap: 10px;
+            padding: 0 20px;
             box-sizing: border-box;
         }
+
+        /* 플랫 네온 스타일 카드 */
         .card {
             width: 100%;
             background: #1e293b;
-            border-radius: 16px;
+            border-radius: 24px;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.15s ease, border-color 0.15s ease;
-            border: 3px solid transparent;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
             -webkit-tap-highlight-color: transparent;
         }
-        .card:active {
-            transform: scale(0.97);
-            border-color: #38bdf8;
+
+        /* PC 마우스 반응 */
+        @media (min-width: 768px) {
+            .card:hover {
+                transform: translateY(-4px);
+                border-color: rgba(56, 189, 248, 0.4);
+                box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+            }
         }
+
+        /* 모바일 터치 피드백 (손맛 강조) */
+        .card:active {
+            transform: scale(0.96);
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+        }
+
+        /* VS 뱃지 디자인 크기 및 폰트 세련화 */
         .vs {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 0.85rem;
             font-weight: 900;
-            color: #ef4444;
-            font-style: italic;
-            margin: 2px 0;
-            text-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+            color: #ffffff;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin: -5px auto;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+            font-style: normal;
         }
+
+        /* 이미지 부모 영역: 왜곡 없이 깔끔하게 배치 */
         .image-wrapper {
             width: 100%;
-            height: 260px;
-            background: #151f32;
+            height: 270px;
+            background: #0f172a;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
         }
+
         .image-wrapper img {
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             object-fit: contain;
         }
+
+        /* 텍스트 영역 */
         .name {
-            padding: 14px 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            padding: 16px 15px;
+            font-size: 1.05rem;
+            font-weight: 700;
             text-align: center;
             width: 100%;
             box-sizing: border-box;
-            background: #0f172a;
-            border-top: 1px solid #1e293b;
+            background: #1e293b;
+            color: #e2e8f0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
         }
+
+        /* 최종 화면 구성 */
         #winner-container {
             display: none;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 450px;
-            padding: 0 15px;
+            max-width: 420px;
+            padding: 0 20px;
             box-sizing: border-box;
         }
+
+        /* 우승 골드 카드 효과 */
         .winner-card {
             width: 100%;
-            border: 4px solid #f59e0b;
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.3);
             pointer-events: none;
         }
+
+        /* 다시하기 버튼 모던화 */
         .restart-btn {
-            margin-top: 25px;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background-color: #38bdf8;
-            color: #0f172a;
+            margin-top: 30px;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            color: #ffffff;
             border: none;
-            border-radius: 12px;
+            border-radius: 16px;
             cursor: pointer;
             width: 100%;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .restart-btn:active {
+            transform: scale(0.97);
         }
     </style>
 </head>
@@ -151,7 +203,7 @@
     </div>
 
     <div id="winner-container">
-        <h2 style="color: #f59e0b; font-size: 1.6rem; margin-bottom: 15px; text-align: center;">🏆 MY PICK 🏆</h2>
+        <h2 style="color: #f59e0b; font-size: 1.5rem; margin-bottom: 20px; text-align: center; font-weight: 800;">🏆 MY PICK 🏆</h2>
         <div class="card winner-card">
             <div class="image-wrapper">
                 <img id="img-winner" src="" alt="우승 유니폼">
