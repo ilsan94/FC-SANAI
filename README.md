@@ -151,7 +151,7 @@
     </div>
 
     <div id="winner-container">
-        <h2 style="color: #f59e0b; font-size: 1.6rem; margin-bottom: 15px; text-align: center;">🏆 우리 팀 최종 유니폼 결정! 🏆</h2>
+        <h2 style="color: #f59e0b; font-size: 1.6rem; margin-bottom: 15px; text-align: center;">🏆 MY PICK 🏆</h2>
         <div class="card winner-card">
             <div class="image-wrapper">
                 <img id="img-winner" src="" alt="우승 유니폼">
