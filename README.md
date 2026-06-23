@@ -317,9 +317,3 @@
         }
 
         window.onload = initGame;
-    </script>
-</body>
-</html>initGame;
-    </script>
-</body>
-</html>
