@@ -22,16 +22,16 @@
 
         /* 타이틀 디자인: 모바일 한 줄 표기를 위해 폰트 크기 하향 및 자간 축소 */
         h1 {
-            font-size: 1.5rem; /* 1.8rem -> 1.5rem으로 변경 */
+            font-size: 1.5rem;
             margin: 25px 0 10px 0;
             font-weight: 900;
             background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 4px 10px rgba(56, 189, 248, 0.15);
-            letter-spacing: -0.06em; /* 글자 간격을 조금 더 촘촘하게 변경 */
+            letter-spacing: -0.06em;
             text-align: center;
-            white-space: nowrap; /* 무조건 한 줄로 나오도록 강제 */
+            white-space: nowrap;
         }
 
         /* 라운드 패널: 반투명 유리(Blur) 효과 */
@@ -85,7 +85,7 @@
                 box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
             }
             h1 {
-                font-size: 1.8rem; /* PC 화면에서는 웅장하게 키워줌 */
+                font-size: 1.8rem;
             }
         }
 
@@ -96,22 +96,39 @@
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
         }
 
-        /* VS 뱃지 디자인 크기 및 폰트 세련화 */
-        .vs {
+        /* ⚽ 이전의 원형 베이스 스타일을 완전히 초기화하고 새롭게 정의한 VS 레이아웃 */
+        .vs-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            gap: 12px;
+            margin: 12px 0;
+            width: 100%;
+        }
+        
+        .vs-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.4), transparent);
+        }
+
+        .vs {
+            font-size: 1.2rem;
             font-weight: 900;
-            color: #ffffff;
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            margin: -5px auto;
-            z-index: 10;
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
-            font-style: normal;
+            color: #ef4444;
+            font-style: italic;
+            text-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            
+            /* 기존 원형 흔적 강제 제거 */
+            background: none !important;
+            border-radius: 0 !important;
+            width: auto !important;
+            height: auto !important;
+            box-shadow: none !important;
+            margin: 0 !important;
         }
 
         /* 이미지 부모 영역: 왜곡 없이 깔끔하게 배치 */
@@ -197,7 +214,12 @@
             <div class="name" id="name-left">유니폼 A</div>
         </div>
         
-        <div class="vs">VS</div>
+        <!-- 확실하게 리뉴얼된 VS 구역 -->
+        <div class="vs-wrapper">
+            <div class="vs-line"></div>
+            <div class="vs">⚽ VS ⚽</div>
+            <div class="vs-line"></div>
+        </div>
         
         <div class="card" onclick="selectCandidate(1)">
             <div class="image-wrapper">
