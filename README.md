@@ -20,18 +20,10 @@
             box-sizing: border-box;
         }
 
-        /* 메인 타이틀 정렬 및 그라데이션 스타일 */
-        .title-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px; /* 축구공과 글자 사이 간격 */
-            margin: 25px 0 10px 0;
-        }
-
+        /* 타이틀 디자인: 모바일 한 줄 표기를 위해 폰트 크기 하향 및 자간 축소 */
         h1 {
             font-size: 1.5rem;
-            margin: 0;
+            margin: 25px 0 10px 0;
             font-weight: 900;
             background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
             -webkit-background-clip: text;
@@ -40,13 +32,6 @@
             letter-spacing: -0.06em;
             text-align: center;
             white-space: nowrap;
-        }
-
-        /* ⚽ 모바일에서 절대 깨지지 않는 SVG 축구공 아이콘 스타일 */
-        .title-ball {
-            width: 24px;
-            height: 24px;
-            display: block;
         }
 
         /* 라운드 패널: 반투명 유리(Blur) 효과 */
@@ -102,10 +87,6 @@
             h1 {
                 font-size: 1.8rem;
             }
-            .title-ball {
-                width: 28px;
-                height: 28px;
-            }
         }
 
         /* 모바일 터치 피드백 (손맛 강조) */
@@ -115,37 +96,43 @@
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
         }
 
-        /* VS 구역 레이아웃 */
+        /* 🔥 이모지 대신 깔끔한 웹 그래픽과 선으로 구성한 새로운 VS 구역 */
         .vs-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin: 12px 0;
+            gap: 15px;
+            margin: 15px 0;
             width: 100%;
         }
         
         .vs-line {
             flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.4), transparent);
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.6), transparent);
         }
 
         .vs {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: #ef4444;
             font-style: italic;
-            text-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+            text-shadow: 0 0 12px rgba(239, 68, 68, 0.8);
+            letter-spacing: 0.05em;
             display: flex;
             align-items: center;
-            gap: 8px;
-            background: none !important;
-            border-radius: 0 !important;
-            width: auto !important;
-            height: auto !important;
-            box-shadow: none !important;
-            margin: 0 !important;
+            gap: 10px;
+        }
+
+        /* 축구공 그래픽 요소 디자인 */
+        .soccer-ball {
+            width: 22px;
+            height: 22px;
+            background: radial-gradient(circle at 30% 30%, #ffffff 0%, #cbd5e1 50%, #475569 100%);
+            border-radius: 50%;
+            border: 2px solid #0f172a;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            position: relative;
         }
 
         /* 이미지 부모 영역: 왜곡 없이 깔끔하게 배치 */
@@ -220,12 +207,7 @@
 </head>
 <body>
 
-    <div class="title-container">
-        <svg class="title-ball" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 0a256 256 0 100 512 256 256 0 000-512zm0 466c-13 0-26-1-39-4l-23-72 38-34 48 12 48-12 38 34-23 72c-13 3-26 4-39 4zM79 367l25-71 45 4 20 45-23 63c-25-11-48-25-67-41zm21-209c19-16 42-30 67-41l23 63-20 45-45 4-25-71zm108-98c13-3 26-4 39-4s26 1 39 4l23 72-38 34-48-12-48 12-38-34 23-72zm119 164l29 27-11 51-45 15-45-15-11-51 29-27 43 11 11-11zm51-39l23-63c25 11 48 25 67 41l-25 71-45-4-20-45zm55 241l-23-63 20-45 45-4 25 71c-19 16-42 30-67 41z" fill="#ffffff"/></svg>
-        <h1>FC사나이 유니폼 월드컵</h1>
-        <svg class="title-ball" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 0a256 256 0 100 512 256 256 0 000-512zm0 466c-13 0-26-1-39-4l-23-72 38-34 48 12 48-12 38 34-23 72c-13 3-26 4-39 4zM79 367l25-71 45 4 20 45-23 63c-25-11-48-25-67-41zm21-209c19-16 42-30 67-41l23 63-20 45-45 4-25-71zm108-98c13-3 26-4 39-4s26 1 39 4l23 72-38 34-48-12-48 12-38-34 23-72zm119 164l29 27-11 51-45 15-45-15-11-51 29-27 43 11 11-11zm51-39l23-63c25 11 48 25 67 41l-25 71-45-4-20-45zm55 241l-23-63 20-45 45-4 25 71c-19 16-42 30-67 41z" fill="#ffffff"/></svg>
-    </div>
-    
+    <h1>⚽ FC사나이 유니폼 월드컵 ⚽</h1>
     <div id="round-title">16강 - 1 / 8</div>
 
     <div class="container" id="game-container">
@@ -238,7 +220,11 @@
         
         <div class="vs-wrapper">
             <div class="vs-line"></div>
-            <div class="vs">⚽ VS ⚽</div>
+            <div class="vs">
+                <div class="soccer-ball"></div>
+                VS
+                <div class="soccer-ball"></div>
+            </div>
             <div class="vs-line"></div>
         </div>
         
