@@ -129,7 +129,7 @@
 </head>
 <body>
 
-    <h1>⚽ 풋살 유니폼 월드컵 ⚽</h1>
+    <h1>⚽ FC사나이 유니폼 월드컵 ⚽</h1>
     <div id="round-title">16강 - 1 / 8</div>
 
     <div class="container" id="game-container">
