@@ -91,22 +91,31 @@
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
         }
 
-        /* VS 뱃지 디자인 크기 및 폰트 세련화 */
-        .vs {
+        /* 변경된 VS 영역 레이아웃 (테두리 원 제거 및 가로 정렬) */
+        .vs-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            gap: 15px;
+            margin: 15px 0;
+            width: 100%;
+        }
+        
+        /* 양옆 세련된 빨간색 그라데이션 선 */
+        .vs-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.6), transparent);
+        }
+
+        /* 빨간색 강조 VS 텍스트 */
+        .vs {
+            font-size: 1.4rem;
             font-weight: 900;
-            color: #ffffff;
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            margin: -5px auto;
-            z-index: 10;
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
-            font-style: normal;
+            color: #ef4444;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+            letter-spacing: 0.05em;
         }
 
         /* 이미지 부모 영역: 왜곡 없이 깔끔하게 배치 */
@@ -192,7 +201,12 @@
             <div class="name" id="name-left">유니폼 A</div>
         </div>
         
-        <div class="vs">VS</div>
+        <!-- 변경된 VS 레이아웃 구조 (양옆 라인 포함) -->
+        <div class="vs-wrapper">
+            <div class="vs-line"></div>
+            <div class="vs">VS</div>
+            <div class="vs-line"></div>
+        </div>
         
         <div class="card" onclick="selectCandidate(1)">
             <div class="image-wrapper">
