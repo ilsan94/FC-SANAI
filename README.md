@@ -19,8 +19,12 @@
             box-sizing: border-box;
         }
 
-        /* 모바일 제목 한 줄 강제 고정 및 폰트 축소 */
+        /* 타이틀 영역 정렬 및 모바일 한 줄 고정 */
         h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             font-size: 1.4rem;
             margin: 25px 0 10px 0;
             font-weight: 900;
@@ -30,6 +34,14 @@
             letter-spacing: -0.05em;
             text-align: center;
             white-space: nowrap;
+        }
+
+        /* 절대 깨지지 않는 이미지 축구공 스타일 */
+        .title-ball {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            vertical-align: middle;
         }
 
         #round-title {
@@ -79,6 +91,10 @@
             }
             h1 {
                 font-size: 1.8rem;
+            }
+            .title-ball {
+                width: 28px;
+                height: 28px;
             }
         }
 
@@ -172,7 +188,11 @@
 </head>
 <body>
 
-    <h1>⚽ FC사나이 유니폼 월드컵 ⚽</h1>
+    <h1>
+        <img class="title-ball" src="https://cdn-icons-png.flaticon.com/512/5323/5323814.png" alt="축구공">
+        <span>FC사나이 유니폼 월드컵</span>
+        <img class="title-ball" src="https://cdn-icons-png.flaticon.com/512/5323/5323814.png" alt="축구공">
+    </h1>
     <div id="round-title">16강 - 1 / 8</div>
 
     <div class="container" id="game-container">
