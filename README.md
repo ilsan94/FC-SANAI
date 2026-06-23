@@ -20,16 +20,18 @@
             box-sizing: border-box;
         }
 
-        /* 타이틀 디자인: 스포티한 입체 그라데이션 */
+        /* 타이틀 디자인: 모바일 한 줄 표기를 위해 폰트 크기 하향 및 자간 축소 */
         h1 {
-            font-size: 1.8rem;
-            margin: 30px 0 8px 0;
+            font-size: 1.5rem; /* 1.8rem -> 1.5rem으로 변경 */
+            margin: 25px 0 10px 0;
             font-weight: 900;
             background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 4px 10px rgba(56, 189, 248, 0.15);
-            letter-spacing: -0.03em;
+            letter-spacing: -0.06em; /* 글자 간격을 조금 더 촘촘하게 변경 */
+            text-align: center;
+            white-space: nowrap; /* 무조건 한 줄로 나오도록 강제 */
         }
 
         /* 라운드 패널: 반투명 유리(Blur) 효과 */
@@ -81,6 +83,9 @@
                 transform: translateY(-4px);
                 border-color: rgba(56, 189, 248, 0.4);
                 box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+            }
+            h1 {
+                font-size: 1.8rem; /* PC 화면에서는 웅장하게 키워줌 */
             }
         }
 
@@ -312,6 +317,9 @@
         }
 
         window.onload = initGame;
+    </script>
+</body>
+</html>initGame;
     </script>
 </body>
 </html>
